@@ -13,8 +13,9 @@ while tentativi<10:
         print("Complimenti, hai indovinato!")
         break
     else:
-        print("Game over!")
+        print("Sbagliato, riprova")
         tentativi=tentativi+1
 
     if (tentativi == 10):
+        print("Game over!")
         break
