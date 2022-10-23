@@ -1,10 +1,12 @@
 numero=int(input("Inserisci il numero: "))
 i=1
+output=0
 
 
 while i<=numero:
-    print(i)
+    output=output+i
     i=i+1
+print(output)
 
 
 
