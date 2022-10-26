@@ -9,9 +9,10 @@ else:
         output=numero_a-numero_b
     else:
         if(segno==3):
-            output=numero_a/numero_b
             if(numero_b==0):
                 output="Non puoi dividere per zero!"
+            else:
+                output=numero_a/numero_b
         else:
             if(segno==4):
                 output=numero_a*numero_b
