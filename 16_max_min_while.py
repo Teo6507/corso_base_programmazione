@@ -13,4 +13,4 @@ while True:
 print("Numero Massimo: "+ str(max))
 print("Numero Minimo: "+ str(min))
 
-a=input("press any key to exit")
+exit=input("press any key to exit")
