@@ -19,3 +19,5 @@ else:
             else:
                 output=numero_a+numero_b
 print(output)
+
+exit=input("press any key to exit")
