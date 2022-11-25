@@ -1,7 +1,7 @@
 A=int(input("inserisci il primo numero: "))
 B=int(input("inserisci il secondo numero: "))
 C=int(input("inserisci il terzo numero: "))
-#Maggiore=0
+Maggiore=0
 
 if (A>B):
    if(C > A):
