@@ -1,6 +1,7 @@
 import random
 
 griglia: list=["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸"]
+continuo:str="s"
 
 def print_griglia(): 
     print(griglia[0] + "|" + griglia[1] + "|" + griglia[2])
@@ -28,7 +29,8 @@ def win():
         return True
 
 def computer_move():
-    mossa=0
+    mossa: int=0
+    mossa_random: bool=True
     while mossa<=8:
         if griglia[mossa]=="X" or griglia[mossa]=="O":
             if mossa==8:
@@ -38,51 +40,63 @@ def computer_move():
                 continue
         if mossa==0 or mossa==3 or mossa==6:
             if griglia[mossa+1]==griglia[mossa+2]:
+                mossa_random=False
                 break
         if mossa==1 or mossa==4 or mossa==7:
             if griglia[mossa+1]==griglia[mossa-1]:
+                mossa_random=False
                 break
         if mossa==2 or mossa==5 or mossa==8:
             if griglia[mossa-1]==griglia[mossa-2]:
+                mossa_random=False
                 break
         if mossa==0 or mossa==1 or mossa==2:
             if griglia[mossa+3]==griglia[mossa+6]:
+                mossa_random=False
                 break
         if mossa==3 or mossa==4 or mossa==5:
             if griglia[mossa+3]==griglia[mossa-3]:
+                mossa_random=False
                 break
         if mossa==6 or mossa==7 or mossa==8:
             if griglia[mossa-3]==griglia[mossa-6]:
+                mossa_random=False
                 break
         if mossa==0:
             if griglia[mossa+4]==griglia[mossa+8]:
+                mossa_random=False
                 break
         if mossa==2:
-            if griglia[mossa+2]==griglia[mossa+2]:
+            if griglia[mossa+2]==griglia[mossa+4]:
+                mossa_random=False
                 break
         if mossa==4:
             if griglia[mossa-4]==griglia[mossa+4]:
+                mossa_random=False
                 break
         if mossa==4:
             if griglia[mossa-2]==griglia[mossa+2]:
+                mossa_random=False
                 break
         if mossa==6:
             if griglia[mossa-2]==griglia[mossa-4]:
+                mossa_random=False
                 break
         if mossa==8:
             if griglia[mossa-4]==griglia[mossa-8]:
+                mossa_random=False
                 break
         mossa=mossa+1
-    while True:
-        mossa=random.randrange(0,9)
-        if griglia[mossa]=="X" or griglia[mossa]=="O":
-            continue
-        else:
-            break
+    if mossa_random:
+        while True:
+            mossa=random.randrange(0,9)
+            if griglia[mossa]=="X" or griglia[mossa]=="O":
+                continue
+            else:
+                break
     return mossa
 
-continuo:str="n"
-while continuo=="n":
+while continuo=="s":
 
     griglia: list=["⁰","¹","²","³","⁴","⁵","⁶","⁷","⁸"]
 
@@ -121,10 +135,10 @@ while continuo=="n":
                 griglia.insert(posizione,"O")
             i=i+1
             turno=2
-        print_griglia()
-        print("_________________________________")
-        if win():
-            break
+            print_griglia()
+            print("_________________________________")
+            if win():
+                break
         
         if turno==2:
             posizione_computer=computer_move()
@@ -135,10 +149,10 @@ while continuo=="n":
                 griglia.insert(posizione_computer,"O")
             i=i+1
             turno=1
-        print_griglia()
-        print("_________________________________")
-        if win():
-            break
+            print_griglia()
+            print("_________________________________")
+            if win():
+                break
         
     if turno==1:
         print("Ho vinto io!!!")
