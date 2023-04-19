@@ -1,9 +1,9 @@
-nome=input("Inserisci una stringa: ")
-l=len(nome)
+stringa=input("Inserisci una stringa: ")
+lenght=len(stringa)
 i=0
 output=0
-while i<l:
-    if nome[i]=="a" or nome[i]=="e" or nome[i]=="i" or nome[i]=="o" or nome[i]=="u" or nome[i]=="A" or nome[i]=="E" or nome[i]=="I" or nome[i]=="O" or nome[i]=="U":
+while i<lenght:
+    if stringa[i]=="a" or stringa[i]=="e" or stringa[i]=="i" or stringa[i]=="o" or stringa[i]=="u" or stringa[i]=="A" or stringa[i]=="E" or stringa[i]=="I" or stringa[i]=="O" or stringa[i]=="U":
         output=output+1
     i=i+1
 print(output)
